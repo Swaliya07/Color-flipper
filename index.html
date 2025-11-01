@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color flipper</title>
+    <style>
+
+   body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial,  sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+   }
+    #FlipBtn{
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 18px;
+        background-color: rgb(16, 19, 11);
+        margin-top: 20px;
+        color: rgb(201, 155, 49);
+        border-radius: 15px;
+        
+    }
+    p{
+        font-size: 20px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>Color flipper</h1>
+    <button id="FlipBtn">flip color</button>
+   <p id="colorCode">Click the button to change a color</p>
+   <script>
+    const btn = document.getElementById("FlipBtn")
+    const colorCode=document.getElementById("colorCode")
+
+    
+
+    btn.addEventListener("click", () => {
+      const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      document.body.style.backgroundColor = randomColor;
+      colorText.textContent = randomColor.toUpperCase();
+    });
+    </script>    
+</body>
+</html>
